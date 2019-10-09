@@ -6,10 +6,13 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class JsonPlaceholderClient {
+	
+	public static final String DUMMY_URL = "https://jsonplaceholder.typicode.com/posts/1";
+	
 	@Autowired
 	RestTemplate restTemplate;
 	
 	public JsonPlaceholderDto getSampleObject() {
-		return restTemplate.getForObject("https://jsonplaceholder.typicode.com/posts/1", JsonPlaceholderDto.class);
+		return restTemplate.getForObject(DUMMY_URL, JsonPlaceholderDto.class);
 	}
 }
